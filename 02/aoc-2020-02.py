@@ -13,7 +13,6 @@ def valid_password(tuple):
     c = password.count(symbol)
     return int(min) <= c <= int(max)
 
-# part 1
 print("Part 1:", len(list(filter(valid_password, get_input("input.txt")))))
 
 def valid_password2(tuple):
