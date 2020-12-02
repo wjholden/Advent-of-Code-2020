@@ -1,3 +1,5 @@
+import os
+
 def parse_input(filename):
     with open(filename) as f:
         content = f.readlines()

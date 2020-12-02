@@ -5,7 +5,7 @@ This year: Python!
 # Daily Themes and Stars
 
 1. `**` Basic loops and conditions, Cartesian product, quadratic and cubic time algorithms.
-2. `  `
+2. `**` String parsing, regular expressions, Boolean operations (`xor`), one-indexed arrays
 3. `  `
 4. `  `
 5. `  `
