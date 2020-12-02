@@ -12,4 +12,11 @@ for x in a:
             print("Part 1", x, y, x + y, x * y)
 
 # This is also pretty neat.
-print("Part 2", [(x, y, z, x + y + z, x * y * z) for x in a for y in a for z in a if x + y + z == 2020 and x <= y and y <= z])
+#print("Part 2", [(x, y, z, x + y + z, x * y * z) for x in a for y in a for z in a if x + y + z == 2020 and x <= y and y <= z])
+
+def part2():
+    # iterate over generator expression so that we can return early as soon as we find a solution.
+    for solution in ((x, y, z, x + y + z, x * y * z) for x in a for y in a for z in a if x + y + z == 2020 and x <= y and y <= z):
+        return solution
+
+print("Part 2", part2())
