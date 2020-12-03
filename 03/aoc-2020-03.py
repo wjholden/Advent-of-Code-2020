@@ -18,6 +18,7 @@ def count_trees(M, right, down):
     return trees
 
 M = parse_input(formatter, "input.txt")
+
 print("Part 1", count_trees(M, 3, 1))
 
 print("Part 2", count_trees(M, 1, 1) * count_trees(M, 3, 1) * count_trees(M, 5, 1) * count_trees(M, 7, 1) * count_trees(M, 1, 2))

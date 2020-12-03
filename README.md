@@ -31,3 +31,6 @@ This year: Python!
 25. `  `
 
 # Lessons Learned
+* Python has no logical `xor` operator.
+* You must explicitly cast a string to integer with the `int` function.
+* After `filter` you need to convert back to `list` before you can get the length with `len`.
