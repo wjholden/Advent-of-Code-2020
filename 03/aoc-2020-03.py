@@ -12,8 +12,8 @@ def count_trees(M, right, down):
     trees = 0
     while (y < len(M)):
         if (M[y][x] == '#'):
-            trees = trees + 1
-        y = y + down
+            trees += 1
+        y += down
         x = (x + right) % len(M[0])
     return trees
 
