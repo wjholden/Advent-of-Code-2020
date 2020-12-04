@@ -34,3 +34,5 @@ This year: Python!
 * Python has no logical `xor` operator.
 * You must explicitly cast a string to integer with the `int` function.
 * After `filter` you need to convert back to `list` before you can get the length with `len`.
+* Regular expression strings start with `r`. Matching does does not return a boolean type unless you wrap it with `bool`, such as `bool(re.match(r"\d{16}", "1"))`.
+* Python syntax allows line breaks with an open `(`.
