@@ -7,7 +7,7 @@ This year: Python!
 1. `**` Basic loops and conditions, Cartesian product, quadratic and cubic time algorithms.
 2. `**` String parsing, regular expressions, Boolean operations (`xor`), one-indexed arrays
 3. `**` 2D arrays (matrices), modulus operator (`%`), functions
-4. `  `
+4. `**` Parsing, regular expressions, input validation, strings, key/value pairs, dictionaries
 5. `  `
 6. `  `
 7. `  `
