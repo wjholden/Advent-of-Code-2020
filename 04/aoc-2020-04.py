@@ -1,4 +1,3 @@
-import os
 import re
 
 def parse(filename):
@@ -6,6 +5,9 @@ def parse(filename):
     key_value_pairs = [current]
     with open(filename) as f:
         for line in f.readlines():
+            # A better way to do this would have been to read all of the file at once,
+            # then split inputs by \n\n. Then, the dict() constructor may be able to 
+            # help with parsing key-value pairs as well.
             l = re.split(' |:', line.strip())
             if len(l) > 1:
                 for i in range(0, len(l), 2):
@@ -36,13 +38,13 @@ def valid_passport2(d):
     hcl_regexp = re.compile(r"^#[a-f0-9]{6}$")
     cid_regexp = re.compile(r"^\d{9}$")
 
-    return (1920 <= int(d['byr']) <= 2002) and (
-        2010 <= int(d['iyr']) <= 2020) and (
-        2020 <= int(d['eyr']) <= 2030) and (
-        valid_height(d['hgt'])) and (
-        bool(re.match(hcl_regexp, d['hcl']))) and (
-        d['ecl'] in ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']) and (
-        bool(re.match(cid_regexp, d['pid'])))
+    return all([1920 <= int(d['byr']) <= 2002,
+        2010 <= int(d['iyr']) <= 2020,
+        2020 <= int(d['eyr']) <= 2030,
+        valid_height(d['hgt']),
+        bool(re.match(hcl_regexp, d['hcl'])),
+        d['ecl'] in ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'],
+        bool(re.match(cid_regexp, d['pid']))]) # could also have used str.isdigit
 
 FILE = 'input.txt'
 

@@ -1,10 +1,5 @@
-import os
-
 def seat_id(s):
     return int(s.replace("F", "0").replace("B", "1").replace("L", "0").replace("R", "1"), 2)
-
-for test in ["FBFBBFFRLR", "BFFFBBFRRR", "FFFBBBFRRR", "BBFFBBFRLL"]:
-    print("Test", seat_id(test))
 
 with open("input.txt") as f:
     seats = [seat_id(line.strip()) for line in f.readlines()]

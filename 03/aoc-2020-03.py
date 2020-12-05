@@ -1,5 +1,3 @@
-import os
-
 def parse_input(format, filename):
     return [format(line) for line in open(filename).readlines()]
 

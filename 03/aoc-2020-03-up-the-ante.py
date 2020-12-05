@@ -1,6 +1,5 @@
 # run 'pip install z3-solver' to install this
 from z3 import *
-import os
 import time
 
 INPUT_FILE = "test.txt"
