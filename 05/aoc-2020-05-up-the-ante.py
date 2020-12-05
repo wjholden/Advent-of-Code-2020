@@ -16,8 +16,7 @@ def board(seats, tickets, print_hey):
             number_of_moves += 1
             places_i_can_go = seats.difference(boarded)
             my_seat = random.choice(tuple(places_i_can_go))
-            print_hey and print(f"Hey, you're in my seat ({board: >3})! | {len(boarded): >3} boarded, {len(need_to_board): >3} still need to board. | Ok, I will move to seat {my_seat: >3}.")
-            #print_hey and print(number_of_moves, ": Hey, you're in my seat!", board, len(boarded), 'Ok, I will move to:', my_seat)
+            print_hey and print(f"Hey, you're in my seat ({board: >3})! | {len(boarded): >3} boarded, {len(need_to_board): >3} waiting. | Ok, I will move to {my_seat: >3}.")
     return my_seat, number_of_moves
 
 # convert the string representation of a seat into an 8-bit integer
@@ -31,6 +30,7 @@ with open("input.txt") as f:
 min_seat = seats[1]
 max_seat = seats[-2]
 
+# We need our real seat to be selectable. I realize that we could trivially discover our seat from the set difference.
 possible_seats = set([seats[0]] + list(range(min_seat, max_seat + 1)) + [seats[-1]])
 
 # convert the list of seats into a a set for faster lookups
