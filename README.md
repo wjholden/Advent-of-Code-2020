@@ -8,7 +8,7 @@ This year: Python!
 2. `**` String parsing, regular expressions, Boolean operations (`xor`), one-indexed arrays
 3. `**` 2D arrays (matrices), modulus operator (`%`), functions
 4. `**` Parsing, regular expressions, input validation, strings, key/value pairs, dictionaries
-5. `  `
+5. `**` Binary, sorting and searching, edge cases
 6. `  `
 7. `  `
 8. `  `
