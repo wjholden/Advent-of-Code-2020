@@ -43,3 +43,5 @@ This year: Python!
 * `open` is a built-in function. You do not need to `import os` to use it.
 * You should use `with` before `open`. It is syntatically similar to the SQL `WITH` and semantically analagous to Java's try-with-resources.
 * `with` can declare multiple items by separating them with commas, such as `with A() as a, B() as b`.
+* `re` does not expand nested groups.
+* The `yield` keyword allows for pipelines. This is cool. You can use it to pass values through nested iterators to avoid buffering a large transaction.

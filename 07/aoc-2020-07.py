@@ -2,6 +2,7 @@ import re
 
 def read_input(filename):
     #s = r"^([\w ]+) bags contain (no other bags)?((\d) ([\w ]+) bag.+)*\.$"
+    # This does not work. Apparently re does not handle nested loops.
     s = r"^([\w ]+) bags contain (no other bags|.+)\.$"
     print(s)
     pattern = re.compile(s)
