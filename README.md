@@ -10,7 +10,7 @@ This year: Python!
 4. `**` Parsing, regular expressions, input validation, strings, key/value pairs, dictionaries
 5. `**` Binary, sorting and searching, edge cases
 6. `  `
-7. `  `
+7. `**` How to invert a binary tree, directed acyclic graphs
 8. `  `
 9. `  `
 10. `  `
@@ -43,5 +43,6 @@ This year: Python!
 * `open` is a built-in function. You do not need to `import os` to use it.
 * You should use `with` before `open`. It is syntatically similar to the SQL `WITH` and semantically analagous to Java's try-with-resources.
 * `with` can declare multiple items by separating them with commas, such as `with A() as a, B() as b`.
-* `re` does not expand nested groups.
 * The `yield` keyword allows for pipelines. This is cool. You can use it to pass values through nested iterators to avoid buffering a large transaction.
+* `re` does not expand nested groups. The `regex` has some more features in the `regex.search` function.
+* You can name a group in a regular expression with the syntax `(?P<name of group>)`.
