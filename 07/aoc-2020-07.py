@@ -42,7 +42,7 @@ def invert(e):
     
 e = get_edges(read_input('input.txt'))
 
-print("Part 1", len(set(children(invert(e), 'shiny gold'))))
+print("Part 1:", len(set(children(invert(e), 'shiny gold'))))
 
 def contents(e, u):
     total = 0
@@ -50,4 +50,4 @@ def contents(e, u):
         total += count + count * contents(e, v)
     return total
 
-print("Part 2", contents(e, 'shiny gold'))
+print("Part 2:", contents(e, 'shiny gold'))

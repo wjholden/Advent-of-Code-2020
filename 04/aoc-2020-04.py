@@ -15,7 +15,6 @@ def parse(filename):
             else:
                 current = {}
                 key_value_pairs.append(current)
-
     return key_value_pairs
 
 def valid_passport(d):
@@ -48,6 +47,6 @@ def valid_passport2(d):
 
 FILE = 'input.txt'
 
-print("Part 1", sum(1 if valid_passport(d) else 0 for d in parse(FILE)))
+print("Part 1:", sum(1 if valid_passport(d) else 0 for d in parse(FILE)))
 
-print("Part 2", sum(1 if valid_passport(d) and valid_passport2(d) else 0 for d in parse(FILE)))
+print("Part 2:", sum(1 if valid_passport(d) and valid_passport2(d) else 0 for d in parse(FILE)))
