@@ -9,7 +9,7 @@ This year: Python!
 3. `**` 2D arrays (matrices), modulus operator (`%`), functions
 4. `**` Parsing, regular expressions, input validation, strings, key/value pairs, dictionaries
 5. `**` Binary, sorting and searching, edge cases
-6. `  `
+6. `**` Set union and intersection, lambda expressions/function pointers for reusability
 7. `**` How to invert a binary tree, directed acyclic graphs
 8. `**` Assembly languages, pure functions, infinite loops
 9. `  `
@@ -46,3 +46,4 @@ This year: Python!
 * The `yield` keyword allows for pipelines. This is cool. You can use it to pass values through nested iterators to avoid buffering a large transaction.
 * `re` does not expand nested groups. The `regex` has some more features in the `regex.search` function.
 * You can name a group in a regular expression with the syntax `(?P<name of group>)`.
+* `set.update` serves as an `addAll`/union.
