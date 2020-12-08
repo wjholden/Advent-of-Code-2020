@@ -11,7 +11,7 @@ This year: Python!
 5. `**` Binary, sorting and searching, edge cases
 6. `  `
 7. `**` How to invert a binary tree, directed acyclic graphs
-8. `  `
+8. `**` Assembly languages, pure functions, infinite loops
 9. `  `
 10. `  `
 11. `  `
