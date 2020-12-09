@@ -12,7 +12,7 @@ This year: Python!
 6. `**` Set union and intersection, lambda expressions/function pointers for reusability
 7. `**` How to invert a binary tree, directed acyclic graphs
 8. `**` Assembly languages, pure functions, infinite loops
-9. `  `
+9. `**` Nested loops, array slices, two-index scanning, greedy algorithms
 10. `  `
 11. `  `
 12. `  `
@@ -47,3 +47,5 @@ This year: Python!
 * `re` does not expand nested groups. The `regex` has some more features in the `regex.search` function.
 * You can name a group in a regular expression with the syntax `(?P<name of group>)`.
 * `set.update` serves as an `addAll`/union.
+* The unpacking operator (`*`) can spread a list or tuple for functions that require positional arguments.
+* Generators and list comprehensions can use `if` as a `WHERE` clause, such as `[i for i in range(10) if i % 3 > 0]`.
