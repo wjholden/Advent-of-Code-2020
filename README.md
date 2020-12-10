@@ -50,3 +50,4 @@ This year: Python!
 * The unpacking operator (`*`) can spread a list or tuple for functions that require positional arguments.
 * Generators and list comprehensions can use `if` as a `WHERE` clause, such as `[i for i in range(10) if i % 3 > 0]`.
 * `@lru_cache` cannot has a `set()` object passed as a parameter.
+* Python 3.9 adds a `@cache` decorator to automatically memoize a function, similar to `@lru_cache` in `functools`.
