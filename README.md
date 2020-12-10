@@ -13,7 +13,7 @@ This year: Python!
 7. `**` How to invert a binary tree, directed acyclic graphs
 8. `**` Assembly languages, pure functions, infinite loops
 9. `**` Nested loops, array slices, two-index scanning, greedy algorithms
-10. `  `
+10. `**` Dynamic programming, overlapping subproblems, combinatorics
 11. `  `
 12. `  `
 13. `  `
@@ -49,3 +49,4 @@ This year: Python!
 * `set.update` serves as an `addAll`/union.
 * The unpacking operator (`*`) can spread a list or tuple for functions that require positional arguments.
 * Generators and list comprehensions can use `if` as a `WHERE` clause, such as `[i for i in range(10) if i % 3 > 0]`.
+* `@lru_cache` cannot has a `set()` object passed as a parameter.
