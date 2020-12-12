@@ -3,17 +3,16 @@ import numpy as np
 def t(x, y):
     return np.array([(1, 0, x), (0, 1, y), (0, 0, 1)])
 
-def r(d):
-    return {
+r ={
         90: np.array([(0, -1, 0), (1, 0, 0), (0, 0, 1)]),
         180: np.array([(-1, 0, 0), (0, -1, 0), (0, 0, 1)]),
         270: np.array([(0, 1, 0), (-1, 0, 0), (0, 0, 1)])
-    }[d]
+    }
 
 with open('input.txt') as f:
     input = [(line[0:1], int(line[1:])) for line in f.readlines()]
 
-m = r(270) # start with a vector pointing east
+m = r[270] # start with a vector pointing east
 v = np.array([0, 0, 1])
 
 for (inst, amount) in input:
@@ -27,9 +26,9 @@ for (inst, amount) in input:
     elif inst == 'W':
         m = t(-amount, 0) @ m
     elif inst == 'L':
-        m = m @ r(amount)
+        m = m @ r[amount]
     elif inst == 'R':
-        m = m @ r(360 - amount)
+        m = m @ r[360 - amount]
     elif inst == 'F':
         m = m @ t(0, amount)
     else:
@@ -51,9 +50,9 @@ for (inst, amount) in input:
     elif inst == 'W':
         wp = t(-amount, 0) @ wp
     elif inst == 'L':
-        wp = r(amount) @ wp
+        wp = r[amount] @ wp
     elif inst == 'R':
-        wp = r(360 - amount) @ wp
+        wp = r[360 - amount] @ wp
     elif inst == 'F':
         p = p + (wp @ np.array([0, 0, 1])) * amount
     else:
