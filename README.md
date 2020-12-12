@@ -15,7 +15,7 @@ This year: Python!
 9. `**` Nested loops, array slices, two-index scanning, greedy algorithms
 10. `**` Dynamic programming, overlapping subproblems, combinatorics
 11. `  `
-12. `  `
+12. `**` Affine transforms, matrix multiplication
 13. `  `
 14. `  `
 15. `  `
@@ -51,3 +51,6 @@ This year: Python!
 * Generators and list comprehensions can use `if` as a `WHERE` clause, such as `[i for i in range(10) if i % 3 > 0]`.
 * `@lru_cache` cannot has a `set()` object passed as a parameter.
 * Python 3.9 adds a `@cache` decorator to automatically memoize a function, similar to `@lru_cache` in `functools`.
+* Numpy does not use the `*` operator the same way as Julia. To multiply matrices, you usually want to use the `@` operator.
+* Creating matrices with Numpy is a lot more painful than it would be in Julia.
+* You can fake a `switch` statement by creating an anoymous `dict` and calling its index. However, this is not free: the interpreter will have to compute all values in this dictionary. If those value computations have side effects then you might have a bad time.
