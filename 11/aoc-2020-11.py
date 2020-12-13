@@ -7,7 +7,7 @@ import numpy as np
 with open('example.txt') as f:
     input = [list(line.strip()) for line in f.readlines()]
 
-def neighbor_counts2(m):
+def neighbor_counts(m):
     rows = len(m)
     cols = len(m[0])
     counts = [[0 for j in range(cols)] for i in range(rows)]
@@ -20,8 +20,8 @@ def neighbor_counts2(m):
                         counts[row + i][col + j] += 1
     return counts
 
-def seat_shuffle3(m):
-    c = neighbor_counts2(m)
+def seat_shuffle(m):
+    c = neighbor_counts(m)
     change = False
     for (row, col) in ((row, col) for row in range(len(m)) for col in range(len(m[0]))):
         if m[row][col] == '#' and c[row][col] >= 4:
@@ -36,10 +36,10 @@ def part1_mutable(input):
     m = copy.deepcopy(input)
     change = True
     while change:
-        m, change = seat_shuffle3(m)
+        m, change = seat_shuffle(m)
     return sum((row.count('#') for row in m))
 
-#print("Part 1:", part1_mutable(input))
+print("Part 1:", part1_mutable(input))
 #cProfile.run('part1_mutable(input)')
 
 def seats_to_vec(input):
@@ -57,6 +57,13 @@ def angle(x1, y1, x2, y2):
     return (np.arctan2(y2 - y1, x2 - x1) * 180 / np.pi) % 360
 
 def neighbor_count_vec(x1, y1, seats):
+    '''
+    Thought I was clever. We represent each seat as a vector.
+    Take the Manhattan distance between each pair. Keep the least
+    of the distances in a little dictionary `d`. At the end of the
+    function, the dictionary contains the distance to the nearest
+    occupied or unoccupied seat in each of the eight directions.
+    '''
     init = (inf, False)
     d = { 0: init, 45: init, 90: init, 135: init, 180: init,
         225: init, 270: init, 315: init }
@@ -70,6 +77,14 @@ def neighbor_count_vec(x1, y1, seats):
     return sum([int(v[1]) for v in d.values()])
 
 def seat_shuffle_vec(seats):
+    '''
+    This is for part 2. So...this actually works for the sample input,
+    but for the puzzle input this algorithm is so inefficient that it
+    fails to complete even a single tick.
+    This is at least quadratic time (maybe worse) because we iterate
+    over each seat in the outer loop (this function) and then again
+    over each seat in the inner loop (neighbor_count_vec).
+    '''
     s2 = set()
     for (x, y, occupied) in seats:
         neighbors = neighbor_count_vec(x, y, seats)
