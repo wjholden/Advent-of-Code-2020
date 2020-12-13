@@ -14,9 +14,9 @@ This year: Python!
 8. `**` Assembly languages, pure functions, infinite loops
 9. `**` Nested loops, array slices, two-index scanning, greedy algorithms
 10. `**` Dynamic programming, overlapping subproblems, combinatorics
-11. `  `
+11. `* ` Procedural programming, immutability, annoyingly large problems
 12. `**` Affine transforms, matrix multiplication
-13. `  `
+13. `**` Modular arithmetic, Chinese Remainder Theorem, big integers
 14. `  `
 15. `  `
 16. `  `
@@ -54,3 +54,5 @@ This year: Python!
 * Numpy does not use the `*` operator the same way as Julia. To multiply matrices, you usually want to use the `@` operator.
 * Creating matrices with Numpy is a lot more painful than it would be in Julia.
 * You can fake a `switch` statement by creating an anoymous `dict` and calling its index. However, this is not free: the interpreter will have to compute all values in this dictionary. If those value computations have side effects then you might have a bad time.
+* Apparently Python has very little support for immutable objects. Python lacks the `final` and `freeze` features from Java and JavaScript.
+* `cProfile` is awesome. Just wrap any function you want in `cProfile.run(...)` and get an easy table of profiling data.
