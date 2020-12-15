@@ -18,7 +18,7 @@ This year: Python!
 12. `**` Affine transforms, matrix multiplication
 13. `**` Modular arithmetic, Chinese Remainder Theorem, big integers
 14. `  `
-15. `  `
+15. `**` Optimization, 1-indexed arrays, `#theremustbeabetterway`
 16. `  `
 17. `  `
 18. `  `
@@ -56,3 +56,5 @@ This year: Python!
 * You can fake a `switch` statement by creating an anoymous `dict` and calling its index. However, this is not free: the interpreter will have to compute all values in this dictionary. If those value computations have side effects then you might have a bad time.
 * Apparently Python has very little support for immutable objects. Python lacks the `final` and `freeze` features from Java and JavaScript.
 * `cProfile` is awesome. Just wrap any function you want in `cProfile.run(...)` and get an easy table of profiling data.
+* `input` is a built-in function that I have been shadowing this whole time. Whoops.
+* The syntax `x not in a` is equivalent to `not x in a`.

@@ -10,12 +10,12 @@ r = {
     }
 
 with open('input.txt') as f:
-    input = [(line[0:1], int(line[1:])) for line in f.readlines()]
+    puzzle = [(line[0:1], int(line[1:])) for line in f.readlines()]
 
 m = r[270] # start with a vector pointing east
 v = np.array([0, 0, 1])
 
-for (inst, amount) in input:
+for (inst, amount) in puzzle:
     # left is global, right is local
     if inst == 'N':
         m = t(0, amount) @ m
@@ -40,7 +40,7 @@ print("Part 1:", abs(x) + abs(y))
 
 wp = t(10, 1)
 p = np.array([0, 0, 1])
-for (inst, amount) in input:
+for (inst, amount) in puzzle:
     if inst == 'N':
         wp = t(0, amount) @ wp
     elif inst == 'S':

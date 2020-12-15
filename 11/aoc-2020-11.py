@@ -4,8 +4,8 @@ from math import inf
 from collections import defaultdict
 import numpy as np
 
-with open('example.txt') as f:
-    input = [list(line.strip()) for line in f.readlines()]
+with open('input.txt') as f:
+    puzzle = [list(line.strip()) for line in f.readlines()]
 
 def neighbor_counts(m):
     rows = len(m)
@@ -32,21 +32,21 @@ def seat_shuffle(m):
             change = True
     return m, change
 
-def part1_mutable(input):
-    m = copy.deepcopy(input)
+def part1_mutable(puzzle):
+    m = copy.deepcopy(puzzle)
     change = True
     while change:
         m, change = seat_shuffle(m)
     return sum((row.count('#') for row in m))
 
-print("Part 1:", part1_mutable(input))
+print("Part 1:", part1_mutable(puzzle))
 #cProfile.run('part1_mutable(input)')
 
-def seats_to_vec(input):
+def seats_to_vec(puzzle):
     seats = set()
-    for y in range(len(input)):
-        for x in range(len(input[0])):
-            if input[y][x] == 'L':
+    for y in range(len(puzzle)):
+        for x in range(len(puzzle[0])):
+            if puzzle[y][x] == 'L':
                 seats.add((x, y, False))
     return seats
 
@@ -104,5 +104,17 @@ def part2(input):
         seats = seat_shuffle_vec(seats)
     return sum([int(s[2]) for s in seats])
 
-print("Part 2:", part2(input))
-cProfile.run('part2(input)')
+#print("Part 2:", part2(input))
+#cProfile.run('part2(input)')
+
+def radiate(i, j, m):
+    vectors = [(1, 0), (0, 1), (-1, 0), (0, -1), (1, 1), (1, -1), (-1, 1), (-1, -1)]
+    neighbors = []
+    radius = 0
+    while len(vectors) > 0:
+        radius += 1
+        for (di, dj) in vectors:
+            if not (di, dj) in neighbors and 0 <= i + radius * di < len(m) and 0 <= j + radius * dj < len(m[0]) and m[i + radius * di][j + radius * dj] == 'L':
+                neighbors.append((i + radius * di, j + radius * dj))
+            
+    return neighbors

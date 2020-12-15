@@ -1,12 +1,12 @@
 with open("input.txt") as f:
-    input = f.read().strip().split('\n\n')
+    puzzle = f.read().strip().split('\n\n')
 
-def yes_answers(input, fcn):
-    for group in input:
+def yes_answers(puzzle, fcn):
+    for group in puzzle:
         yield len(fcn(*(set(s) for s in group)))
 
-input = [line.split() for line in input]
+puzzle = [line.split() for line in puzzle]
 
-print("Part 1:", sum(yes_answers(input, set.union)))
+print("Part 1:", sum(yes_answers(puzzle, set.union)))
 
-print("Part 2:", sum(yes_answers(input, set.intersection)))
+print("Part 2:", sum(yes_answers(puzzle, set.intersection)))
