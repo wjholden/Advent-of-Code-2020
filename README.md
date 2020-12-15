@@ -18,7 +18,7 @@ This year: Python!
 12. `**` Affine transforms, matrix multiplication
 13. `**` Modular arithmetic, Chinese Remainder Theorem, big integers
 14. `  `
-15. `**` Optimization, 1-indexed arrays, `#theremustbeabetterway`
+15. `**` Optimization, 1-indexed arrays, `#theremustbeabetterway`, profiling
 16. `  `
 17. `  `
 18. `  `
