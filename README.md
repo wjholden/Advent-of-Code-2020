@@ -58,3 +58,4 @@ This year: Python!
 * `cProfile` is awesome. Just wrap any function you want in `cProfile.run(...)` and get an easy table of profiling data.
 * `input` is a built-in function that I have been shadowing this whole time. Whoops.
 * The syntax `x not in a` is equivalent to `not x in a`.
+* Python trivializes a value swap: `x, y = y, x`.
