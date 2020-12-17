@@ -20,7 +20,7 @@ This year: Python!
 14. `  `
 15. `**` Optimization, 1-indexed arrays, `#theremustbeabetterway`, profiling
 16. `  `
-17. `  `
+17. `**` 4-dimensional geometry, code reuse, generalized solutions vs. performance
 18. `  `
 19. `  `
 20. `  `
@@ -59,3 +59,5 @@ This year: Python!
 * `input` is a built-in function that I have been shadowing this whole time. Whoops.
 * The syntax `x not in a` is equivalent to `not x in a`.
 * Python trivializes a value swap: `x, y = y, x`.
+* A `dict` gives you an extremely general solution to `xRy` with many constant time operations, but if `x` is an integer then an array might actually be faster. Sometimes the constants of `O(1)` operations actually matter.
+* Python probably has no [`Nest`](https://stackoverflow.com/questions/65345098/does-python-have-a-nest-function-like-mathematica) equivalent.
