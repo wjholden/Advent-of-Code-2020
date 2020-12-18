@@ -59,5 +59,7 @@ This year: Python!
 * `input` is a built-in function that I have been shadowing this whole time. Whoops.
 * The syntax `x not in a` is equivalent to `not x in a`.
 * Python trivializes a value swap: `x, y = y, x`.
-* A `dict` gives you an extremely general solution to `xRy` with many constant time operations, but if `x` is an integer then an array might actually be faster. Sometimes the constants of `O(1)` operations actually matter.
+* A `dict` gives you an extremely general solution to `xRy` with many constant time operations, but if `x` is an integer then an array might actually be faster. Sometimes the constants of `O(1)` operations actually matter. (See days 15 and 17).
 * Python probably has no [`Nest`](https://stackoverflow.com/questions/65345098/does-python-have-a-nest-function-like-mathematica) equivalent.
+* (Not Python, but hey look Julia has [`@code_warntype`](https://docs.julialang.org/en/v1/manual/performance-tips/#man-code-warntype).)
+* Parsing an expression from left to right means that the base case is on the left.
