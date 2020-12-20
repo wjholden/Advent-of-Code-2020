@@ -1,6 +1,6 @@
 import os
 
-for i in range(1, 16):
+for i in range(1, 26):
     if i > 1:
         print()
     directory = str(i).zfill(2)

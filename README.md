@@ -23,7 +23,7 @@ This year: Python!
 17. `**` 4-dimensional geometry, code reuse, generalized solutions vs. performance
 18. `  `
 19. `  `
-20. `  `
+20. `* ` Strings
 21. `  `
 22. `  `
 23. `  `
@@ -63,3 +63,4 @@ This year: Python!
 * Python probably has no [`Nest`](https://stackoverflow.com/questions/65345098/does-python-have-a-nest-function-like-mathematica) equivalent.
 * (Not Python, but hey look Julia has [`@code_warntype`](https://docs.julialang.org/en/v1/manual/performance-tips/#man-code-warntype).)
 * Parsing an expression from left to right means that the base case is on the left.
+* List comprehension gives you an easy way to filter keys in a `dict` by value: `[key for (key, value) in my_dict if some_condition(key)]`.
