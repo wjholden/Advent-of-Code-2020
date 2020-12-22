@@ -25,7 +25,7 @@ This year: Python!
 19. `  `
 20. `* ` Strings
 21. `  `
-22. `  `
+22. `* ` Procedural programming, lists and iterators
 23. `  `
 24. `  `
 25. `  `
