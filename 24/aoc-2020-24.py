@@ -39,7 +39,7 @@ assert set(counts.values()) == {1, 2}
 print('Part 1:', list(counts.values()).count(1))
 
 black_tiles = set()
-# I don't like this, but I can't figure out how to get both (x,y)
+# I don't like this, but I can't figure out how to get both (x, y)
 # from the key with list comprehension.
 for key, value in dict(counts).items():
     if value == 1:
@@ -54,16 +54,15 @@ def neighbors(x, y):
 def flip(tiles):
     to_black = set()
     to_white = set()
-    # iterate over every black tile
-    for (x, y) in tiles:
+    for (x, y) in tiles: # iterate over every black tile
         n = neighbors(x, y)
         black_neighbors = n.intersection(tiles)
         white_neighbors = n.difference(black_neighbors)
         if len(black_neighbors) == 0 or len(black_neighbors) > 2:
             to_white.add((x, y))
         for (wx, wy) in white_neighbors:
-            # You would think that a condition here to test if (wx, wy) is already
-            # in to_black would help, but in fact it makes no difference.
+            # You would think that testing if (wx, wy) is already in
+            # to_black would help, but in fact it makes no difference.
             wn = neighbors(wx, wy).intersection(tiles)
             if len(wn) == 2:
                 to_black.add((wx, wy))
