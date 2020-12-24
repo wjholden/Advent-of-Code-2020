@@ -23,11 +23,11 @@ This year: Python!
 17. `**` 4-dimensional geometry, code reuse, generalized solutions vs. performance
 18. `  `
 19. `  `
-20. `* ` Strings
+*20*. `* ` Strings, rotations (*hard problem*)
 21. `  `
 22. `* ` Procedural programming, lists and iterators
 23. `  `
-24. `  `
+24. `**` Automata, `set` intersection/difference
 25. `  `
 
 # Lessons Learned
@@ -61,6 +61,10 @@ This year: Python!
 * Python trivializes a value swap: `x, y = y, x`.
 * A `dict` gives you an extremely general solution to `xRy` with many constant time operations, but if `x` is an integer then an array might actually be faster. Sometimes the constants of `O(1)` operations actually matter. (See days 15 and 17).
 * Python probably has no [`Nest`](https://stackoverflow.com/questions/65345098/does-python-have-a-nest-function-like-mathematica) equivalent.
-* (Not Python, but hey look Julia has [`@code_warntype`](https://docs.julialang.org/en/v1/manual/performance-tips/#man-code-warntype).)
+* (Hey look, Julia has [`@code_warntype`](https://docs.julialang.org/en/v1/manual/performance-tips/#man-code-warntype)).
 * Parsing an expression from left to right means that the base case is on the left.
 * List comprehension gives you an easy way to filter keys in a `dict` by value: `[key for (key, value) in my_dict if some_condition(key)]`.
+* Python's format strings are inferior to JavaScript.
+* Python's official documentation on [docs.python.org](https://docs.python.org) is often not the top search result on Google. This is unlike most other languages, where you easily find websites like [TechNet](https://docs.microsoft.com), [MDN](https://developer.mozilla.org/en-US/), and [JavaDoc](https://docs.oracle.com/javase/8/docs/api/overview-summary.html) very easily.
+* You can use the syntax `{1, 2}` to create a `set`.
+* Tally the elements of a list with `Counter` in `collections`.
