@@ -20,10 +20,10 @@ This year: Python!
 14. `  `
 15. `**` Optimization, 1-indexed arrays, `#theremustbeabetterway`, profiling
 16. `  `
-17. `**` 4-dimensional geometry, code reuse, generalized solutions vs. performance
+17. `**` 4-dimensional geometry, code reuse, generalized solutions vs. performance (`O(1) != O(2)`)
 18. `  `
 19. `  `
-*20*. `* ` Strings, rotations (*hard problem*)
+20. `* ` Strings, rotations (**hard** problem)
 21. `  `
 22. `* ` Procedural programming, lists and iterators
 23. `  `
