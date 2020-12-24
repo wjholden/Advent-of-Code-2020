@@ -29,9 +29,9 @@ for b in borders.values():
     assert len(b) == 8 # verify an assumption that each tile has no duplicated borders
 
 tile_weight = [(tile_id, sum([border_counts[b] for b in borders[tile_id]])) for tile_id in borders.keys()]
-print(tile_weight)
+#print(tile_weight)
 corners = [tile_id for (tile_id, weight) in tile_weight if weight == 12]
-print(corners)
+#print(corners)
 print('Part 1:', reduce(lambda a, x: a * x, corners, 1))
 
-print(len(borders))
+#print(len(borders))

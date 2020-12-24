@@ -70,3 +70,4 @@ This year: Python!
 * Tally the elements of a list with `Counter` in `collections`.
 * A way to format a fixed-width binary string: `format(value, '#036b')`.
 * Python automatically supports big integers. See [PEP237](https://www.python.org/dev/peps/pep-0237/).
+* You cannot customize Python's operator precedence.
