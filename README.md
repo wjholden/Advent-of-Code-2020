@@ -17,7 +17,7 @@ This year: Python!
 11. `* ` Procedural programming, immutability, annoyingly large problems
 12. `**` Affine transforms, matrix multiplication
 13. `**` Modular arithmetic, Chinese Remainder Theorem, big integers
-14. `  `
+14. `**` Binary, bitwise operations, wide integers (>32 bits), computer architecture
 15. `**` Optimization, 1-indexed arrays, `#theremustbeabetterway`, profiling
 16. `  `
 17. `**` 4-dimensional geometry, code reuse, generalized solutions vs. performance (`O(1) != O(2)`)
@@ -68,3 +68,5 @@ This year: Python!
 * Python's official documentation on [docs.python.org](https://docs.python.org) is often not the top search result on Google. This is unlike most other languages, where you easily find websites like [TechNet](https://docs.microsoft.com), [MDN](https://developer.mozilla.org/en-US/), and [JavaDoc](https://docs.oracle.com/javase/8/docs/api/overview-summary.html) very easily.
 * You can use the syntax `{1, 2}` to create a `set`.
 * Tally the elements of a list with `Counter` in `collections`.
+* A way to format a fixed-width binary string: `format(value, '#036b')`.
+* Python automatically supports big integers. See [PEP237](https://www.python.org/dev/peps/pep-0237/).

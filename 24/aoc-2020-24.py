@@ -68,10 +68,45 @@ def flip(tiles):
                 to_black.add((wx, wy))
     return tiles.difference(to_white).union(to_black)
 
-exhibit = [black_tiles]
+exhibits = [black_tiles]
 for i in range(1, 101):
-    e = exhibit[-1]
-    exhibit.append(flip(e))
+    e = exhibits[-1]
+    exhibits.append(flip(e))
     #print(f'Day {i}: {len(exhibit[-1])}')
 
-print('Part 2:', len(exhibit[-1]))
+print('Part 2:', len(exhibits[-1]))
+
+# upping the ante...messing around with sea monsters from day 20.
+exit()
+
+from operator import itemgetter
+def print_exhibit(exhibit):
+    xmin = min(exhibit, key=itemgetter(0))[0]
+    xmax = max(exhibit, key=itemgetter(0))[0]
+    ymin = min(exhibit, key=itemgetter(1))[1]
+    ymax = max(exhibit, key=itemgetter(1))[1]
+    for y in range(ymin, ymax + 1):
+        for x in range(xmin, xmax + 1):
+            if (x, y) in exhibit:
+                print('#', end='')
+            else:
+                print(' ', end='')
+        print()
+
+def read_dragon():
+    with open('dragon.txt') as d:
+        dragon_lines = d.readlines()
+    for y in range(len(dragon_lines)):
+        line = list(dragon_lines[y])
+        for x in range(len(line)):
+            if line[x] == '#':
+                yield (x, y)
+
+dragons = [set(read_dragon())]
+for i in range(1000):
+    print_exhibit(dragons[-1])
+    if dragons[0] <= dragons[i] and i > 0:
+        print('Found a dragon in a dragon!')
+    input('Press enter to continue...')
+    dragons.append(flip(dragons[-1]))
+
