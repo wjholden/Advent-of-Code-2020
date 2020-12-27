@@ -71,3 +71,80 @@ This year: Python!
 * A way to format a fixed-width binary string: `format(value, '#036b')`.
 * Python automatically supports big integers. See [PEP237](https://www.python.org/dev/peps/pep-0237/).
 * You cannot customize Python's operator precedence.
+* Ignore values in loops or tuple unpacking with `_`. Examples: `a, _, c = (1, 2, 3)` and `for _ in range(10)`.
+
+# Thoughts on Python
+
+Python is pretty nice.
+I can see the appeal.
+The syntax is expressive, compact, and easy to read.
+Some people dislike the use of tabs, but this was never a problem for me.
+I liked the separation of bitwise operators (`&`, `|`, `^`, `~`) from logical operators (`and`, `or`, `not`).
+I also like the `in` operator.
+Python does not have labeled statements, so you cannot specify which nested loop to `break` or `continue` from.
+
+Python arrays use the same square brackets as C with many rich features, such as negative indices.
+I believe subarrays are views into the original array, not copies.
+Arrays are zero-indexed (first element is position 0).
+
+Most programmers will reach for arrays-of-arrays to represent matrices in row-major.
+This will be familiar to Java and JavaScript programmers.
+This feels strange to those used to matrix operations in scientific languages, such as R and Julia. 
+
+To my knowledge, Python has no pointers and no support for low-level memory tricks that you might see in C and C++.
+
+I don't think Python has a vanilla solution for vectorized operations.
+This was something I liked in R and Julia.
+Python was designed as a general-purpose programming language and not for scientific computing.
+I think [Numpy](https://numpy.org) can vectorize a function, but I only used Numpy for one problem this year.
+
+I **really** wish Python used Emacs-style keyboard shortcuts in its REPL.
+IDLE makes things even worse by moving the cursor with the up and down keys instead of scrolling through previous commands entered.
+No other terminal interface that I know of does this.
+I read that the reason for this behavior is that the developers consider it more beginner-friendly.
+This is a bad reason in my opinion and makes Python feel like a language with training wheels.
+The REPL is missing tab completion and context-sensitive help.
+
+List comprehension is really good.
+`filter`, `map`, and `reduce` are not quite as compact as they would be in Java and JavaScript.
+Worse, these operations would not compose left-to-right.
+
+Generator expressions are really interesting.
+This concept of a eager/lazy (possibly asynchronous) generator queuing a result that can be retrieved by another function is compelling.
+I think now appreciate why Java has an [`Iterator`](https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html) interface.
+You could do all kinds of expensive queries eagerly in the `Iterator` for immediate consumption when needed.
+I have never noticed a `yield` keyword in any other language.
+
+Performance was generally not a problem for me in Advent of Code.
+It probably helps to have a general awareness of data structures to use.
+
+Python's support for immutability is pretty poor.
+I love setting `final` and `const` wherever possible in Java and JavaScript.
+I also like to seal an object with `freeze` or equivalent when debugging, as this helps enforce assumptions.
+There is also no support to annotate pure functions.
+
+I never reached for an object-oriented solution to a problem this year, so I have no opinion of Python's support for OOP.
+Many of my solutions use tuples as an anonymous record type.
+Python's support for tuples is superior.
+Tests for equality "just work".
+Tuple unpacking is expressive and pleasant to use.
+
+`@cache` trivializes memoization of pure functions.
+
+In general, string operations are quite intuitive in Python.
+It is a joy to use the same square-bracket syntax as arrays for substrings.
+Python's format strings are not quite as friendly as those in JavaScript.
+Python partly makes up for this with `bin` and `hex`.
+`bin` and `hex` are very convenient and ought to be included in every language.
+
+Python's official documentation is adequate but not quite as easy to navigate as JavaDoc, MDN, and TechNet.
+It was annoying that [docs.python.org](https://docs.python.org) is usually *not* the top Google search result for Python-related queries
+(examples: [Python array](https://www.google.com/search?q=python%20array),
+[Python bitwise](https://www.google.com/search?q=python%20bitwise),
+[Python string](https://www.google.com/search?q=python%20string),
+[Python repl](https://www.google.com/search?q=python%20repl),
+[Python reserved keywords](https://www.google.com/search?q=python%20reserved%20keywords))
+It is probably a little more usable than Mathematica's documentation.
+Python has a built-in `help` command, but I did not find it anywhere near as useful as Julia's built-in `?` help.
+
+Overall, Python's rich features, clear syntax, and flexibility make it a pleasant and easy high-level language.
